@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 env: 
  AZURE-WEBAPP-NAME: ecommerceappnode
- AZURE_WEBAPP-PACKAGEPATH: '.'
+ AZURE_WEBAPP-PACKAGEPATH: './backend'
  NODE_VERSION: '14.x'
 
 jobs:
