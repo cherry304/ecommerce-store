@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 env: 
  AZURE-WEBAPP-NAME: ecommerceappnode
- AZURE_WEBAPP-PACKAGEPATH: './backend'
+ AZURE_WEBAPP-PACKAGEPATH: '.'
  NODE_VERSION: '14.x'
 
 jobs:
@@ -26,12 +26,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-        working-directory: ./backend 
+        working-directory: .
     
       - run: npm run build --if-present
-        working-directory: ./backend
+        working-directory: .
       - run: npm test
-        working-directory: ./backend
+        working-directory: .
         
       - name: 'Deploy to Azure WebApp'
         uses: azure/webapps-deploy@v2
